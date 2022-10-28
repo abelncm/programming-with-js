@@ -121,7 +121,3 @@ function longestStringInArray(myList) {
     }
     return longestString;
 }
-
-
-
-['How', 'Are you today', 'Hi']
