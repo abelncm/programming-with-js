@@ -26,12 +26,6 @@ function printVars() {
 }
 
 printVars();
-printVars();
-printVars();
-printVars();
-printVars();
-printVars();
-printVars();
 
 function sum(a, b) {
     var total = a + b;

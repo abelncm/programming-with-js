@@ -13,3 +13,5 @@ function multiplyArrayItemsBy(myList, multiplyNumber) {
 
     return myList;
 }
+
+// multiplyArrayItemsBy([2,1,4], 2)
