@@ -1,33 +1,15 @@
+console.log('exercise')
 
-class Person {
-    #name;
-    #age;
-    constructor(name, age) {
-        this.#name=name;
-        this.#age=age;
+// var myList = [4,12,345,6546,23]
+
+// console.log(myList)
+
+
+function multiplyArrayItemsBy(myList, multiplyNumber) {
+
+    for(pos in myList) {
+        myList[pos] = myList[pos] * multiplyNumber;
     }
-    name() {
-        return this.#name;
-    }
-    age() {
-        return this.#age;
-    }
+
+    return myList;
 }
-
-let abel = new Person('AbelA', 33)
-console.log(abel.name);
-
-
-function hello() {
-
-    return 'hi';
-
-}
-
-
-function calc(a, b) {
-
-    return a*b;
-
-}
-
