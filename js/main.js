@@ -5,7 +5,7 @@ console.log('exercise')
 // console.log(myList)
 
 function multiplyArrayItemsBy(myList, multiplyNumber) {
-    for(pos in myList) {
+    for (pos in myList) {
         myList[pos] = myList[pos] * multiplyNumber;
     }
 
@@ -24,7 +24,7 @@ function addToArrayItems(myList, appendValue) {
 
     let total = 0;
 
-    for(pos in myList) {
+    for (pos in myList) {
         total += value
         myList[pos] = myList[pos] + appendValue;
     }
@@ -34,22 +34,22 @@ function addToArrayItems(myList, appendValue) {
 
 function listCalculation(myList, operator) {
     let total = myList[0];
-    
-    if(operator == '+') {
-        for(var i=1; i<myList.length; i++) {
+
+    if (operator == '+') {
+        for (var i = 1; i < myList.length; i++) {
             total += myList[i];
         }
 
     } else if (operator == '-') {
-        for(var i=1; i<myList.length; i++) {
+        for (var i = 1; i < myList.length; i++) {
             total -= myList[i];
         }
     } else if (operator == '*') {
-        for(var i=1; i<myList.length; i++) {
+        for (var i = 1; i < myList.length; i++) {
             total *= myList[i];
         }
     } else if (operator == '/') {
-        for(var i=1; i<myList.length; i++) {
+        for (var i = 1; i < myList.length; i++) {
             total /= myList[i];
         }
     }
@@ -58,5 +58,38 @@ function listCalculation(myList, operator) {
 
 }
 
+function simpleCalculation(num1, num2, operator) {
+    if (operator == '+') {
+        return num1 + num2;
+    } else if (operator == '-') {
+        return num1 - num2;
+    } else if (operator == '*') {
+        return num1 * num2;
+    } else if (operator == '/') {
+        return num1 / num2;
+    }
+}
 
-['How', 'Are you today', 'Hi']
+function whosPhoneNumber(phoneNumber) {
+    let phoneBook = {
+        Abel: 5802943,
+        Laura: 9761405,
+        Lisa: 5850628,
+        Adilson: 9240912,
+        Victor: 9519228
+    }
+    
+    for (key in phoneBook) {
+        // console.log(key, phoneBook[key]);
+        const savedPhoneNumber = phoneBook[key];
+        
+        if(savedPhoneNumber == phoneNumber)
+            return key;
+    }
+}
+
+
+
+
+
+// ['How', 'Are you today', 'Hi']
