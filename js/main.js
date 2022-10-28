@@ -107,8 +107,21 @@ function giveMePhoneNumber(name) {
     return 'Name not found!';
 }
 
+function longestStringInArray(myList) {
+    let maxSizeFound = 0;
+    let longestString;
+    
+    for(index in myList) {
+        const stringSize = myList[index].length;
+        
+        if(stringSize > maxSizeFound) {
+            maxSizeFound=stringSize;
+            longestString=myList[index];
+        }
+    }
+    return longestString;
+}
 
 
 
-
-// ['How', 'Are you today', 'Hi']
+['How', 'Are you today', 'Hi']
