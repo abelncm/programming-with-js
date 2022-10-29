@@ -23,6 +23,7 @@ function whosPhoneNumber(phoneNumber) {
 
 // Given a name
 // search and return its owner's phone number
+// TODO: SIMPLIFY THIS FUNCTION
 function giveMePhoneNumber(name) {
     let phoneBook = {
         Abel: 5802943,
