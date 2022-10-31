@@ -65,11 +65,11 @@ function giveMePhoneNumberv2(name) {
 // Given a name
 // search and return its owner's phone number
 // TODO: SIMPLIFY THIS FUNCTION
-function giveMePhoneNumberWithPhoneBook(phoneBook, name) {
-    if(phoneBook[name] == undefined){
-        return 'The name '+name+ ' is not registered!';
+function giveMePhoneNumberWithPhoneBook(_phoneBook, name) {
+    if(_phoneBook[name] == undefined){
+        return 'The name ' + name + ' is not registered!';
     }
-    return phoneBook[name];
+    return _phoneBook[name];
 }
 
 // Add a new contact
@@ -115,9 +115,9 @@ function DeletePhoneNumber(name) {
 // Delete a contact
 // return phone book
 // TODO: SIMPLIFY THIS FUNCTION
-function DeletePhoneWithPhoneBook(phoneBook, name){
-    delete phoneBook[name];
-    return phoneBook;
+function DeletePhoneWithPhoneBook(_phoneBook, name){
+    delete _phoneBook[name];
+    return _phoneBook;
 }
 
 // Manage a phone book
@@ -150,10 +150,10 @@ function ManagePhoneBook(name, number, operation) {
 //Operation values ("GET","ADD","DELETE")
 function ManagePhoneBookFunction(name, number, operation) {    
     if (operation=='DELETE'){
-        return DeletePhoneWithPhoneBook(name);    
+        return DeletePhone(name);    
     }
     else if (operation == 'ADD'){
-        return AddPhoneNumberWithPhoneBook(name,number);        
+        return AddPhoneNumber(name,number);        
     }
     else if (operation=='GET'){
         return giveMePhoneNumberv2(name);
@@ -163,7 +163,7 @@ function ManagePhoneBookFunction(name, number, operation) {
 // Manage a phone book
 // return Phone Book
 //Operation values ("GET","ADD","DELETE")
-let phoneBook = {
+var phoneBook = {
     Abel: 5802943,
     Laura: 9761405,
     Lisa: 5850628,
@@ -173,14 +173,51 @@ let phoneBook = {
 
 function ManagePhoneBookFunctionV2(name, number, operation) {    
     if (operation=='DELETE'){
-        phoneBook = DeletePhoneNumber(name, phoneBook);    
+        phoneBook = DeletePhoneWithPhoneBook(phoneBook, name);    
     }
     else if (operation == 'ADD'){
-        phoneBook = AddPhoneNumber(name, number, phoneBook);        
+        phoneBook = AddPhoneNumberWithPhoneBook(phoneBook, name, number);        
     }
     else if (operation=='GET'){
-        return giveMePhoneNumberWithPhoneBook(name, phoneBook);
+        return giveMePhoneNumberWithPhoneBook(phoneBook,name);
     }
     return phoneBook;
 }
 
+function ManagePhoneBookFunctionV3(name, number, _phoneBook, operation) {    
+    if (operation=='DELETE'){
+        _phoneBook = DeletePhoneWithPhoneBook(_phoneBook, name);    
+    }
+    else if (operation == 'ADD'){
+        _phoneBook = AddPhoneNumberWithPhoneBook(_phoneBook, name, number);        
+    }
+    else if (operation=='GET'){
+        return giveMePhoneNumberWithPhoneBook(_phoneBook,name);
+    }
+    return _phoneBook;
+}
+
+/*var _pbook1 = ManagePhoneBookFunctionV2('Maria', 9857412, 'ADD');
+console.log(_pbook1);
+var _pbook2 = ManagePhoneBookFunctionV2('Maria', "", 'GET');
+console.log(_pbook2);
+var _pbook3 = ManagePhoneBookFunctionV2('Maria', "", 'DELETE');
+console.log(_pbook3);*/
+
+
+/*let _pbook={};
+console.log("Add Maria");
+_pbook = ManagePhoneBookFunctionV3('Maria', 9857412, _pbook, 'ADD');
+console.log(_pbook);
+console.log("Add Abel");
+_pbook = ManagePhoneBookFunctionV3('Abel', 9857412, _pbook, 'ADD');
+console.log(_pbook);
+console.log("Search for Abel");
+let _numero = ManagePhoneBookFunctionV3('Abel', 9857412, _pbook, 'GET');
+console.log("GET ",_numero);
+console.log("Search for Maria");
+_numero = ManagePhoneBookFunctionV3('Maria', "", _pbook, 'GET');
+console.log("GET ",_numero);
+console.log("Delete Maria");
+_pbook = ManagePhoneBookFunctionV3('Maria', "", _pbook, 'DELETE');
+console.log(_pbook);*/
