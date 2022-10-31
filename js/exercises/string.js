@@ -6,3 +6,17 @@ function sayHello(name) {
     let greetingText = `Hello! How are you today ${name}?`;
     return greetingText;
 }
+
+function pintCharacter(){
+    let name = 'Zuleica';
+    let count =0;
+    for(; count<name.length; count++){
+        console.log(name[count])
+    } 
+}
+
+function reverse(name){
+    for (let i = name.length-1; i>=0; i--){
+        console.log(name[i])
+    } 
+}
