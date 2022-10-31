@@ -20,3 +20,14 @@ function reverse(name){
         console.log(name[i])
     } 
 }
+
+function countVowels (string){
+    string = string.toLocaleLowerCase();
+    let vowelsCounted = 0
+    for(i = 0; i < string.length; i++) {
+        if (string[i] == "a" || string[i] == "e" 
+        || string[i] == "i" || string[i] == "o"
+        || string[i] == "u") {vowelsCounted ++}
+    }
+    return vowelsCounted
+}
