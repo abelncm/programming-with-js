@@ -43,3 +43,53 @@ function giveMePhoneNumber(name) {
     return 'The name '+name+ ' is not registered!';
 
 }
+
+// Given a name
+// search and return its owner's phone number
+// TODO: SIMPLIFY THIS FUNCTION
+function giveMePhoneNumberv2(name) {
+    let phoneBook = {
+        Abel: 5802943,
+        Laura: 9761405,
+        Lisa: 5850628,
+        Adilson: 9240912,
+        Victor: 9519228
+    }
+    //return phoneBook[name];
+    if(phoneBook[name] == undefined){
+        return 'The name '+name+ ' is not registered!';
+    }
+    return phoneBook[name];
+}
+
+// Add a new contact
+// return phone book with a new contact
+// TODO: SIMPLIFY THIS FUNCTION
+function AddPhoneNumber(name, number) {
+    let phoneBook = {
+        Abel: 5802943,
+        Laura: 9761405,
+        Lisa: 5850628,
+        Adilson: 9240912,
+        Victor: 9519228
+    }
+    //TO DO    
+    phoneBook[name]=number;
+    return phoneBook;
+}
+
+// Delete a contact
+// return phone book
+// TODO: SIMPLIFY THIS FUNCTION
+function DeletePhoneNumber(name) {
+    let phoneBook = {
+        Abel: 5802943,
+        Laura: 9761405,
+        Lisa: 5850628,
+        Adilson: 9240912,
+        Victor: 9519228
+    }
+    //TO DO
+    delete phoneBook[name];
+    return phoneBook;
+}
