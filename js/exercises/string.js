@@ -31,3 +31,29 @@ function countVowels (string){
     }
     return vowelsCounted
 }
+
+//String start with a value
+function startsWith (string, search){
+    return string.startsWith(search);
+}
+
+//String start with a value, using loop
+function startsWithv2 (string, search){
+    for(let i = 0; i < search.length; i++){
+        if(string[i]!==search[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+//String start with a value, using subtring
+function startsWithv3 (string, search){
+    var sub = string.substring(0,search.length);
+    return search == sub;
+    /*if(search == sub){
+        return true;
+    } else{
+        return false;
+    }*/
+}
