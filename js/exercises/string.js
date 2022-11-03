@@ -119,3 +119,22 @@ function chunkStringv3(msg, divide=1){
     }
     return chunks;
 }
+
+function chunkStringv4(){
+    let msg = "Maria";
+    let divide=1;
+    const chunks = [];
+    if(divide==1){
+        chunks.push(msg);
+        return chunks;
+    }
+    for(let i=0;i<msg.length;i=i+divide){
+        chunks.push(msg.substring(i,i+divide));
+    }
+    return chunks;
+}
+
+
+function chunkStringv4(valor1, valor2){
+    return valor1+valor2;
+}
