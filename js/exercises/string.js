@@ -57,3 +57,63 @@ function startsWithv3 (string, search){
         return false;
     }*/
 }
+
+function concatString(msg, repeat=1){
+    let msgConcat = "";
+    for(let i=0;i<repeat;i++){
+        //msgConcat = msgConcat + msg;
+        msgConcat = msgConcat.concat(msg);
+    }
+    return msgConcat;
+}
+
+function escape_html(msg){
+    msg = msg.replaceAll("&","");
+    msg = msg.replaceAll("<","");
+    msg = msg.replaceAll(">","");
+    msg = msg.replaceAll("'","");
+    msg = msg.replaceAll('"','');
+    return msg;
+}
+
+function chunkString(msg, divide=1){
+    const chunks = [];
+    if(divide==1){
+        chunks.push(msg);
+        return chunks;
+    }
+    let y =0, part="";
+    for(let i=0;i<msg.length;i++){
+        part=part+msg[i];            
+        if(part.length==divide){
+            chunks.push(part);
+            part='';
+        }
+    }
+    chunks.push(part);
+    return chunks;
+}
+
+function chunkStringv2(msg, divide=1){
+    const chunks = [];
+    if(divide==1){
+        chunks.push(msg);
+        return chunks;
+    }
+    for(let i=0;i<msg.length;i=i+divide){
+        chunks.push(msg.slice(i,i+divide));
+    }
+    return chunks;
+}
+
+function chunkStringv3(msg, divide=1){
+    const chunks = [];
+    if(divide==1){
+        chunks.push(msg);
+        return chunks;
+    }
+    for(let i=0;i<msg.length;i=i+divide){
+        chunks.push(msg.substring(i,i+divide));
+    }
+    return chunks;
+}
