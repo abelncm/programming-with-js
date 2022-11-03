@@ -82,7 +82,7 @@ function chunkString(msg, divide=1){
         chunks.push(msg);
         return chunks;
     }
-    let y =0, part="";
+    let part="";
     for(let i=0;i<msg.length;i++){
         part=part+msg[i];            
         if(part.length==divide){
@@ -90,7 +90,9 @@ function chunkString(msg, divide=1){
             part='';
         }
     }
-    chunks.push(part);
+    if(part.length>0){
+        chunks.push(part);
+    }
     return chunks;
 }
 
