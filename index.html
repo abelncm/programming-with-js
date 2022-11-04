@@ -11,11 +11,31 @@
     <script src="js/exercises/string.js"></script>
     <script src="js/exercises/number.js"></script>
     <script src="js/exercises/datetime.js"></script>
+    <script src="js/exercises/domexec.js"></script>
 </head>
 <body>
-
     <h1>Programming with Javascript</h1>
-    <p>Use the browser console, <b>CTRL+SHIFT+I</b>, to interact and view function results</p>
-
+    <p id="paragrafo">Use the browser console, <b>CTRL+SHIFT+I</b>, to interact and view function results</p>
+    <p>
+        <div id="data"></div>
+    </p>
+    <p>
+        <div id="msg">OLA</div>
+    </p>
+    <p>
+        <input type="text" id="nome" name="nome" />
+        <button onclick="addNameForm('Belarmino')">Preenche Nome</button>    
+    </p>
+    <p>
+        <input type="text" id="numero" name="numero" />
+        <button onclick="getNumber()">Pegar Número</button>
+        <div id="showNumber"></div>
+    </p>
+    <p>
+        <input type="text" id="valor1" name="valor1" />
+        <input type="text" id="valor2" name="valor2" />
+        <button onclick="soma()">Soma</button>
+        <div id="showsoma"></div>
+    </p>
 </body>
 </html>
