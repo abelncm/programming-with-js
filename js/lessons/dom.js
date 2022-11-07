@@ -61,3 +61,9 @@ function reset(){
     let span=document.querySelector('#counter span');
     span.textContent=1
 }
+
+function changeBoxColor(){
+    let selectedColor = document.querySelector('#colors').value;
+    document.querySelector('.coloring-box').style.backgroundColor = selectedColor;
+    
+}
