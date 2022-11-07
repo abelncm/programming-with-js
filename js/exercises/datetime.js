@@ -1,3 +1,6 @@
+console.log('Date/time exercises');
+
+
 function tempo(hora){
     if(hora>6 && hora<12){
         return "CEDO";
