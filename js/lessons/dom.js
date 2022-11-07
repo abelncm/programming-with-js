@@ -67,3 +67,23 @@ function changeBoxColor(){
     document.querySelector('.coloring-box').style.backgroundColor = selectedColor;
     
 }
+
+
+let oMeuIntervalo;
+function clockCounter(){
+    
+    oMeuIntervalo = setInterval(function() {
+
+        console.log('a executar');
+
+        let span = document.querySelector('#clock-counter span');
+        let num = parseInt(span.textContent);
+        span.textContent=num+1;
+
+    }, 1000);
+}
+function stop() {
+    clearInterval(oMeuIntervalo);
+}
+
+   
