@@ -113,8 +113,7 @@ function calculate() {
     span.textContent = result;
 }
 
-function totolotoResult() {
-
+function generateTotolotoNumbers() {
     let totolotoNumbers = [];
 
     for (let i = 0; i < 6; i++) {
@@ -127,13 +126,17 @@ function totolotoResult() {
         totolotoNumbers.push(generatedNumber);
     }
 
-    console.log(totolotoNumbers);
+    // console.log(totolotoNumbers);
+    return totolotoNumbers;
+}
 
+function totolotoResult() {
 
-    let inputList = document.querySelectorAll("#totoloto input");
-
+    let totolotoNumbers = generateTotolotoNumbers();
     let correctNumbers = [];
     let wrongNumbers = [];
+    
+    let inputList = document.querySelectorAll("#totoloto input");
 
     for (input of inputList) {
         console.log(input);
