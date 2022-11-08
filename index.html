@@ -57,9 +57,26 @@
     </div>
     </br>
     <div id="clock-counter">
-        <button onclick="clockCounter()">Start</button>
+        <button class="start-btn" onclick="clockCounter()">Start</button>
         <button onclick="stop()">Stop</button>
         <span>1</span>
+    </div>
+
+    <div id="calculator">
+        <input class="param1" type="number" value="0">
+
+        <select class="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">x</option>
+        </select>
+
+        <input class="param2" type="number" value="0">
+
+        <button onclick="calculate()">=</button>
+        
+        <span class="result">0</span>
     </div>
     
 </body>

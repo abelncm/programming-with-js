@@ -69,21 +69,48 @@ function changeBoxColor(){
 }
 
 
-let oMeuIntervalo;
+let myInterval;
 function clockCounter(){
+    document.querySelector('#clock-counter .start-btn')
+        .setAttribute('disabled', 'true');
     
-    oMeuIntervalo = setInterval(function() {
-
+    myInterval = setInterval(function() {
         console.log('a executar');
 
         let span = document.querySelector('#clock-counter span');
         let num = parseInt(span.textContent);
-        span.textContent=num+1;
+        
+        if(num==10)
+            clearInterval(myInterval);
+        else
+            span.textContent=num+1;
 
     }, 1000);
 }
+
 function stop() {
-    clearInterval(oMeuIntervalo);
+    clearInterval(myInterval);
+}
+
+function calculate() {
+    let param1 = parseInt(document.querySelector('#calculator .param1').value);
+    let param2 = parseInt(document.querySelector('#calculator .param2').value);
+    let operator = document.querySelector('#calculator .operator').value;
+    let span = document.querySelector('#calculator .result');
+
+    let result=0;
+
+    if(operator == '+') {
+        result = param1 + param2;
+    } else if(operator == '-') {
+        result = param1 - param2;
+    }else if(operator == '/') {
+        result = param1 / param2;
+    }else if(operator == '*') {
+        result = param1 * param2;
+    }
+
+    span.textContent = result;
 }
 
    
