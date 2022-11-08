@@ -17,3 +17,20 @@ body > div {
 #totoloto input {
     width: 50px;
 }
+
+#ball {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: radial-gradient(blue, rgb(12, 31, 83));
+    border-radius: 50%;
+    box-shadow: 0 0 5px #00000054;
+    cursor: pointer;
+}
+
+#ball.hide {
+    display: none;
+}

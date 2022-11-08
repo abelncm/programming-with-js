@@ -135,7 +135,7 @@ function totolotoResult() {
     let totolotoNumbers = generateTotolotoNumbers();
     let correctNumbers = [];
     let wrongNumbers = [];
-    
+
     let inputList = document.querySelectorAll("#totoloto input");
 
     for (input of inputList) {
@@ -164,3 +164,44 @@ function sortArray(list) {
     return list.sort(function (a, b) { return a - b })
 }
 
+// -------------------------------------------------
+// ----------------- Ball animation ----------------
+// -------------------------------------------------
+let animationInterval;
+
+
+document.querySelector('#ball').addEventListener('click', ()=>{
+    alert('You won!');
+    stopBallAnimation();
+});
+
+function animateBall() {
+
+    document.querySelector('#animate-ball .start')
+        .disabled = true;
+
+    let ball = document.querySelector('#ball');
+    
+    animationInterval = setInterval(()=>{
+        
+        ball.classList.toggle('hide');
+        ball.style.top=generateRandomNumbers(1000) + 'px';
+        ball.style.left=generateRandomNumbers(1000) + 'px';
+
+        
+        ball.style.width=generateRandomNumbers(300) + 'px';
+        ball.style.height = ball.style.width;
+
+    }, 1000);
+
+}
+
+function generateRandomNumbers(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function stopBallAnimation() {
+    clearInterval(animationInterval);
+    document.querySelector('#animate-ball .start')
+        .disabled = false;
+}
